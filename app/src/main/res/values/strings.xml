@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TourDuLich</string>
+    <string name="bottom_home">Home</string>
+    <string name="bottom_contact">Contact</string>
+    <string name="bottom_profile">Profile</string>
+    <string name="tour_description">Description</string>
+    <string name="tour_price">Price</string>
+</resources>
