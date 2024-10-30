@@ -32,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         mViewPager2 = findViewById(R.id.view_pager_2);
         mBottomNavigationView = findViewById(R.id.bottom_navigation);
 
