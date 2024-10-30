@@ -1,6 +1,8 @@
 package com.example.tourdulich.fragment;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +29,7 @@ public class HomeFragment extends Fragment {
     private View mView;
     private RecyclerView rcvTour;
     private ListDataAdapter listDataAdapter;
+
 
     @Nullable
     @Override
@@ -74,10 +77,11 @@ public class HomeFragment extends Fragment {
         listTourHeader.add(new TourHeader(R.drawable.wallpaper));
 
         listData.add(new ListData(ListDataAdapter.TYPE_TOUR_HEADER, null, null, listTourHeader));
+        listData.add(new ListData(ListDataAdapter.TYPE_EDT_SEARCH, null, null, null));
+        listData.add(new ListData(ListDataAdapter.TYPE_TV, null, null, null));
         listData.add(new ListData(ListDataAdapter.TYPE_TOUR, null, listTour, null));
         listData.add(new ListData(ListDataAdapter.TYPE_TOURFAVORITE, listTourFavorite, null, null));
         listData.add(new ListData(ListDataAdapter.TYPE_TOUR, null, listTour, null));
-
 
         return listData;
     }
