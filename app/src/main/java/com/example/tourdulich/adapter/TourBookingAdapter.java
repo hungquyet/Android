@@ -15,29 +15,30 @@ import com.example.tourdulich.model.Tour;
 
 import java.util.List;
 
-public class TourManagerAdapter extends RecyclerView.Adapter<TourManagerAdapter.TourManagerViewHolder> {
+public class TourBookingAdapter extends RecyclerView.Adapter<TourBookingAdapter.TourViewHolder>{
     private Context mContext;
     private List<Tour> mListTour;
 
-    public TourManagerAdapter(Context mContext) {
+    public TourBookingAdapter(Context mContext) {
         this.mContext = mContext;
     }
 
+    public TourBookingAdapter() {
+    }
     public void setData(List<Tour> list){
-        mListTour = list;
-        // Load dữ liệu vào adapter
+        this.mListTour = list;
         notifyDataSetChanged();
     }
 
     @NonNull
     @Override
-    public TourManagerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_tour, parent, false);
-        return new TourManagerViewHolder(view);
+    public TourViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_tour_booking, parent, false);
+        return new TourViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TourManagerViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull TourViewHolder holder, int position) {
         Tour tour = mListTour.get(position);
         if(tour == null){
             return;
@@ -47,6 +48,7 @@ public class TourManagerAdapter extends RecyclerView.Adapter<TourManagerAdapter.
         holder.tvName.setText(tour.getName());
         holder.tvDescription.setText(tour.getDescription());
         holder.tvPrice.setText(tour.getPrice());
+        holder.tvStatus.setText(tour.getStatus());
     }
 
     @Override
@@ -57,19 +59,23 @@ public class TourManagerAdapter extends RecyclerView.Adapter<TourManagerAdapter.
         return 0;
     }
 
-    public class TourManagerViewHolder extends RecyclerView.ViewHolder{
+    public class TourViewHolder extends RecyclerView.ViewHolder{
+        // Khai báo các thành phần có trong layout item
         private ImageView imgTour;
         private TextView tvName;
         private TextView tvDescription;
         private TextView tvPrice;
+        private TextView tvStatus;
 
-        public TourManagerViewHolder(@NonNull View itemView) {
+        public TourViewHolder(@NonNull View itemView) {
             super(itemView);
 
             imgTour = itemView.findViewById(R.id.img_tour);
             tvName = itemView.findViewById(R.id.tv_name);
             tvDescription = itemView.findViewById(R.id.tv_description);
             tvPrice = itemView.findViewById(R.id.tv_price);
+            tvStatus = itemView.findViewById(R.id.tv_status);
+
         }
     }
 }

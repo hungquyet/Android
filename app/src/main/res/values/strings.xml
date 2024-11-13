@@ -5,4 +5,11 @@
     <string name="bottom_profile">Profile</string>
     <string name="tour_description">Description</string>
     <string name="tour_price">Price</string>
+    <string name="tour_status">Status</string>
+    <string name="required_name_hint">Họ &amp; tên <font color="#FF0000">*</font></string>
+    <string name="required_phonenumber_hint">Điện thoại <font color="#FF0000">*</font></string>
+    <string name="required_email_hint">Email <font color="#FF0000">*</font></string>
+    <string name="required_password_hint">Mật khẩu <font color="#FF0000">*</font></string>
+    <string name="required_retypepassword_hint">Nhập lại mật khẩu <font color="#FF0000">*</font></string>
+    <string name="call_advise">Chúng tôi sẽ gọi điện tư vấn &amp; xác nhận</string>
 </resources>

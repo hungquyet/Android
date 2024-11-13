@@ -4,21 +4,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tourdulich.R;
-import com.example.tourdulich.model.TourHeader;
+import com.example.tourdulich.model.Tour;
 
 import java.util.List;
 
-public class TourHeaderAdapter extends RecyclerView.Adapter<TourHeaderAdapter.TourHeaderViewHolder>{
+public class TourImageAdapter extends RecyclerView.Adapter<TourImageAdapter.TourHeaderViewHolder>{
 
-    private List<TourHeader> mListTourHeader;
+    private List<Tour> mListTourHeader;
 
-    public void setData(List<TourHeader> list){
+    public void setData(List<Tour> list){
         this.mListTourHeader = list;
         notifyDataSetChanged();
     }
@@ -27,17 +26,17 @@ public class TourHeaderAdapter extends RecyclerView.Adapter<TourHeaderAdapter.To
     @Override
     public TourHeaderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_tour_header, parent, false);
-        return new TourHeaderAdapter.TourHeaderViewHolder(view);
+        return new TourImageAdapter.TourHeaderViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull TourHeaderViewHolder holder, int position) {
-        TourHeader tourHeader = mListTourHeader.get(position);
-        if(tourHeader == null){
+        Tour tourImage = mListTourHeader.get(position);
+        if(tourImage == null){
             return;
         }
 
-        holder.imgTour.setImageResource(tourHeader.getResourceImage());
+        holder.imgTour.setImageResource(tourImage.getResourceImage());
     }
 
     @Override

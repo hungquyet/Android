@@ -6,12 +6,32 @@ public class Tour {
     private String name;
     private String description;
     private String price;
+    private String status;
 
     public Tour(int resourceImage, String name, String description, String price) {
         this.resourceImage = resourceImage;
         this.name = name;
         this.description = description;
         this.price = price;
+    }
+
+    public Tour(int resourceImage, String name, String price) {
+        this.resourceImage = resourceImage;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+    }
+
+    public Tour(int resourceImage){
+        this.resourceImage = resourceImage;
+    }
+
+    public Tour(int resourceImage, String name, String description, String price, String status ){
+        this.resourceImage = resourceImage;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.status = status;
     }
 
     public int getResourceImage() {
@@ -44,5 +64,13 @@ public class Tour {
 
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

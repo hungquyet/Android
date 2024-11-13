@@ -1,0 +1,7 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Khi TextView được focus -->
+    <item android:state_focused="true" android:color="@color/white"/> <!-- Màu chữ khi focus -->
+
+    <!-- Khi TextView không được focus -->
+    <item android:color="#727B82"/> <!-- Màu chữ khi không focus -->
+</selector>

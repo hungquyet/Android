@@ -1,10 +1,12 @@
 package com.example.tourdulich;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +18,7 @@ public class LoginActivity extends AppCompatActivity {
 
     ImageView img_login;
     EditText edt_password;
+    TextView tv_register,tv_btnLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,24 +34,37 @@ public class LoginActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
+        tv_register = findViewById(R.id.tv_register);
         edt_password = findViewById(R.id.edt_password);
         img_login = findViewById(R.id.img_login);
+        tv_btnLogin = findViewById(R.id.tv_btnLogin);
+
+        tv_register.setPaintFlags(tv_register.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        tv_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        tv_btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         img_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String password = edt_password.getText().toString().trim();
 
-                if (password.equals("admin")) {
-                    // Chuyển đến AdminActivity
-                    Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
-                    startActivity(intent);
-                    finish(); // Kết thúc LoginActivity nếu không muốn quay lại
-                } else {
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+
             }
         });
     }

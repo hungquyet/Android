@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
+
                 if(id == R.id.bottom_home){
                     mViewPager2.setCurrentItem(0);
                 } else if(id == R.id.bottom_contact){

@@ -1,60 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     app:cardCornerRadius="14dp"
-
     app:cardElevation="8dp"
-    app:cardUseCompatPadding="true"
-    >
+    app:cardUseCompatPadding="true">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+    <FrameLayout
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        >
 
         <ImageView
             android:id="@+id/img_tour_favorite"
             android:layout_width="match_parent"
-            android:layout_height="123dp"
-            android:src="@drawable/nghinhphong"
+            android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            />
+            android:src="@drawable/nghinhphong" />
 
         <TextView
             android:id="@+id/tv_tour_favorite_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
+            android:layout_gravity="top"
+            android:layout_marginTop="65dp"
             android:padding="6dp"
-            android:textColor="#354C6D"
             android:text="@string/app_name"
-            android:textAlignment="center"
-            />
-        <TextView
-            android:id="@+id/tv_tour_favorite_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:padding="6dp"
-            android:textColor="#354C6D"
-            android:text="@string/tour_description"
-            android:textAlignment="center"
-
-            />
+            android:layout_marginStart="15dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_tour_favorite_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
+            android:layout_gravity="left"
             android:padding="6dp"
-            android:textColor="#3987D6"
+            android:layout_marginTop="90dp"
             android:text="@string/tour_price"
-            android:textAlignment="center"
-            />
+            android:textColor="@color/white"
+            android:layout_marginStart="15dp"
+            android:textSize="14sp" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/tv_bookNow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:background="@drawable/title_tour_mangetour_background"
+            android:padding="6dp"
+            android:text="BOOK NOW"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="125dp"
+            tools:ignore="RtlCompat" />
+
+    </FrameLayout>
+
 </androidx.cardview.widget.CardView>

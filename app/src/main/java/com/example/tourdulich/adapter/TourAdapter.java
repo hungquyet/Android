@@ -1,5 +1,6 @@
 package com.example.tourdulich.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +16,15 @@ import com.example.tourdulich.model.Tour;
 import java.util.List;
 
 public class TourAdapter extends RecyclerView.Adapter<TourAdapter.TourViewHolder>{
-
+    private Context mContext;
     private List<Tour> mListTour;
 
+    public TourAdapter(Context mContext) {
+        this.mContext = mContext;
+    }
+
+    public TourAdapter() {
+    }
     public void setData(List<Tour> list){
         this.mListTour = list;
         notifyDataSetChanged();
