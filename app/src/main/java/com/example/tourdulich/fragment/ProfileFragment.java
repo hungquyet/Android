@@ -12,13 +12,14 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import com.example.tourdulich.BookedTourActivity;
+import com.example.tourdulich.LoginActivity;
 import com.example.tourdulich.R;
 import com.example.tourdulich.UpdateInfoActivity;
 
 public class ProfileFragment extends Fragment {
 
     private View mView;
-    private ConstraintLayout csl_updateInfo, csl_bookedTour;
+    private ConstraintLayout csl_updateInfo, csl_bookedTour, csl_logOut;
 
     @Nullable
     @Override
@@ -28,9 +29,11 @@ public class ProfileFragment extends Fragment {
 
         csl_updateInfo = mView.findViewById(R.id.csl_updateInfo);
         csl_bookedTour = mView.findViewById(R.id.csl_bookedTour);
+        csl_logOut = mView.findViewById(R.id.csl_logOut);
 
         csl_bookedTour.setOnClickListener(v -> openBookedTourActivity());
         csl_updateInfo.setOnClickListener(v -> openUpdateInfoActivity());
+        csl_logOut.setOnClickListener(v -> logOut());
         return mView;
     }
 
@@ -41,6 +44,11 @@ public class ProfileFragment extends Fragment {
 
     private void openUpdateInfoActivity() {
         Intent intent = new Intent(getActivity(), UpdateInfoActivity.class);
+        startActivity(intent);
+    }
+
+    private void logOut() {
+        Intent intent = new Intent(getActivity(), LoginActivity.class);
         startActivity(intent);
     }
 

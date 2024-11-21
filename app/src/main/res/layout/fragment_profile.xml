@@ -149,6 +149,42 @@
                                 />
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/csl_logOut"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:background="@drawable/grey_corner_bg"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginTop="16dp"
+                            >
+
+
+                            <ImageView
+                                android:id="@+id/img_logOut"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_marginStart="20dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/logout" />
+
+                            <TextView
+                                android:id="@+id/tv_logOut"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:text="Đăng xuất"
+                                android:textColor="@color/black"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/img_logOut"
+                                app:layout_constraintTop_toTopOf="parent"
+                                />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
                     </LinearLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
